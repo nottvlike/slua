@@ -35,13 +35,22 @@ namespace SLua
 
         public static void OnAddCustomClass(LuaCodeGen.ExportGenericDelegate add)
         {
-            add(typeof(System.Func<int>), null);
-            add(typeof(System.Action<int, string>), null);
-            add(typeof(System.Action<int, Dictionary<int, object>>), null);
-            add(typeof(List<int>), "ListInt");
-            add(typeof(Dictionary<int, string>), "DictIntStr");
-            add(typeof(string), "String");
+			add(typeof(System.Func<int>), null);
+			add(typeof(System.Action<int, string>), null);
+			add(typeof(System.Action<int, Dictionary<int, object>>), null);
+			add(typeof(CameraMove), "CameraMove");
+			add(typeof(JoystickManager), "JoystickManager");
+			add(typeof(LuaBaseEvent), "LuaBaseEvent");
+			add(typeof(LuaEventManager), "LuaEventManager");
+			add(typeof(LuaFixedUpdateEvent), "LuaFixedUpdateEvent");
+			add(typeof(LuaUpdateEvent), "LuaUpdateEvent");
+			add(typeof(LuaCollisionTriggerEvent), "LuaCollisionTriggerEvent");
+			add(typeof(LuaManager), "LuaManager");
+			add(typeof(ResourceManager), "ResourceManager");
+			add(typeof(UpdateManager), "UpdateManager");
+			add(typeof(FileManager), "FileManager");
 			add(typeof(TcpSocket), "TcpSocket");
+			add(typeof(PoolManager), "PoolManager");
             // add your custom class here
             // add( type, typename)
             // type is what you want to export
