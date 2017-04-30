@@ -847,8 +847,11 @@ return index
 					return t == typeof(bool);
 				case LuaTypes.LUA_TTABLE:
 					{
+						var typeName = t.ToString ().Replace ("UnityEngine.", "");
 						if (t == typeof(LuaTable) || t.IsArray)
 							return true;
+						else if (LuaDLL.luaS_checkluatype (l, p, typeName) == 0)
+							return false;
 						else if (t.IsValueType)
 							return true;//luaTypeCheck(l, p, t.Name);
 						else if (LuaDLL.luaS_subclassof(l, p, t.Name) == 1)
